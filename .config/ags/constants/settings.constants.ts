@@ -3,8 +3,6 @@ import {
   leftPanelWidgetSelectors,
   rightPanelWidgetSelectors,
 } from "../constants/widget.constants";
-import { booruApis, chatBotApis } from "../constants/api.constants";
-import { BooruImage } from "../class/BooruImage";
 import { dateFormats } from "../constants/date.constants";
 import { phi, phi_min } from "../constants/phi.constants";
 import { Settings } from "../interfaces/settings.interface";
@@ -181,12 +179,6 @@ export const defaultSettings: Settings = {
     },
     layout: barWidgetSelectors,
   },
-  waifuWidget: {
-    input_history: "",
-    visibility: true,
-    current: new BooruImage(),
-    api: booruApis[0],
-  },
   rightPanel: {
     exclusivity: true,
     lock: false,
@@ -198,25 +190,6 @@ export const defaultSettings: Settings = {
     lock: false,
     width: 400,
     widget: leftPanelWidgetSelectors[0],
-  },
-  chatBot: {
-    api: chatBotApis[0],
-    imageGeneration: false,
-  },
-  booru: {
-    api: booruApis[0],
-    tags: [],
-    limit: Math.round(20 * phi_min), // 20 → 20*0.618 ≈ 12
-    page: 1,
-    columns: 2,
-    bookmarks: [],
-    selectedTab: booruApis[0].name,
-  },
-  crypto: {
-    favorite: {
-      symbol: "",
-      timeframe: "",
-    },
   },
   fileManager: "nautilus",
   keyStrokeVisualizer: {
@@ -250,55 +223,6 @@ export const defaultSettings: Settings = {
       key: {
         name: "OpenRouter API Key",
         value: "",
-        type: "string",
-        min: 1,
-        max: 256,
-      },
-    },
-    danbooru: {
-      user: {
-        name: "Danbooru API User",
-        value: "publicapi",
-        type: "string",
-        min: 1,
-        max: 256,
-      },
-      key: {
-        name: "Danbooru API Key",
-        value: "Pr5ddYN7P889AnM6nq2nhgw1",
-        type: "string",
-        min: 1,
-        max: 256,
-      },
-    },
-    gelbooru: {
-      user: {
-        name: "Gelbooru API User",
-        value: "1667355",
-        type: "string",
-        min: 1,
-        max: 256,
-      },
-      key: {
-        name: "Gelbooru API Key",
-        value:
-          "1ccd9dd7c457c2317e79bd33f47a1138ef9545b9ba7471197f477534efd1dd05",
-        type: "string",
-        min: 1,
-        max: 256,
-      },
-    },
-    safebooru: {
-      user: {
-        name: "Safebooru API User",
-        value: "publicapi",
-        type: "string",
-        min: 1,
-        max: 256,
-      },
-      key: {
-        name: "Safebooru API Key",
-        value: "Pr5ddYN7P889AnM6nq2nhgw1",
         type: "string",
         min: 1,
         max: 256,

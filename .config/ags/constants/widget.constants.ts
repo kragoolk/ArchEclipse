@@ -1,17 +1,11 @@
 import { WidgetSelector } from "../interfaces/widgetSelector.interface";
-import BooruViewer from "../widgets/leftPanel/components/BooruViewer";
-import ChatBot from "../widgets/leftPanel/components/ChatBot";
 import CustomScripts from "../widgets/leftPanel/components/CustomScripts";
-import Donations from "../widgets/leftPanel/components/Donations";
 import MediaWidget from "../widgets/MediaWidget";
-import Waifu from "../widgets/rightPanel/components/Waifu";
-
 import Workspaces from "../widgets/bar/components/Workspaces";
 import Information from "../widgets/bar/components/Information";
 import Utilities from "../widgets/bar/components/Utilities";
 import ScriptTimer from "../widgets/rightPanel/components/ScriptTimer";
 import { Accessor } from "ags";
-import CryptoWidget from "../widgets/rightPanel/components/CryptoViewer";
 import MangaViewer from "../widgets/leftPanel/components/MangaViewer";
 import SettingsWidget from "../widgets/leftPanel/components/SettingsWidget";
 import Calendar from "../widgets/rightPanel/components/Calendar";
@@ -46,13 +40,6 @@ export const barWidgetSelectors: WidgetSelector[] = [
 
 export const rightPanelWidgetSelectors: WidgetSelector[] = [
   {
-    name: "Waifu",
-    icon: "",
-    widget: ({ className }: { className?: string | Accessor<string> }) =>
-      Waifu({ className }),
-    enabled: true,
-  },
-  {
     name: "Media",
     icon: "",
     widget: ({
@@ -82,13 +69,6 @@ export const rightPanelWidgetSelectors: WidgetSelector[] = [
     enabled: false,
   },
   {
-    name: "Crypto",
-    icon: "",
-    widget: ({ className }: { className?: string | Accessor<string> }) =>
-      CryptoWidget({ className }),
-    enabled: false,
-  },
-  {
     name: "Calendar",
     icon: "󰃰",
     widget: ({ className }: { className?: string | Accessor<string> }) =>
@@ -105,18 +85,6 @@ export const rightPanelWidgetSelectors: WidgetSelector[] = [
 ];
 
 export const leftPanelWidgetSelectors: WidgetSelector[] = [
-  {
-    name: "ChatBot",
-    icon: "",
-    widget: () => ChatBot(),
-    enabled: true,
-  },
-  {
-    name: "BooruViewer",
-    icon: "",
-    widget: () => BooruViewer(),
-    enabled: false,
-  },
   {
     name: "MangaViewer",
     icon: "",
@@ -140,11 +108,5 @@ export const leftPanelWidgetSelectors: WidgetSelector[] = [
     icon: "",
     widget: () => KeyBinds(),
     enabled: false,
-  },
-  {
-    name: "Donations",
-    icon: "",
-    widget: () => Donations(),
-    enabled: true,
   },
 ];
